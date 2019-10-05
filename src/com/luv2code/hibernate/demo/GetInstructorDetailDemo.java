@@ -21,7 +21,7 @@ public class GetInstructorDetailDemo {
 
 		try {
 
-			int id = 3;
+			int id = 5;
 			
 			session.beginTransaction();
 			

@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
 
-public class CreateDemo {
+public class DeleteInstructorDetailDemo {
 
 	public static void main(String[] args) {
 		
@@ -20,15 +20,21 @@ public class CreateDemo {
 		Session session = factory.getCurrentSession();
 
 		try {
-
-			Instructor tempInstructor = new Instructor("Tobo", "Snuikr", "kokki@dori");
-			tempInstructor.setInstructorDetail(new InstructorDetail("flexieTube", "makingMoney"));
+			
+			int id = 5;
 			
 			session.beginTransaction();
 			
-			session.save(tempInstructor); 
+			InstructorDetail temp = session.get(InstructorDetail.class, id);
+			
+			//break bi-directional link between instructor and instructorDetail
+			temp.getInstructor().setInstructorDetail(null);;
+			
+			session.delete(temp);
 			
 			session.getTransaction().commit();
+			
+			
 			
 
 		} catch (Exception e) {
