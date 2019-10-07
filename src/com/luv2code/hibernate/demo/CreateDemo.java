@@ -21,8 +21,8 @@ public class CreateDemo {
 
 		try {
 
-			Instructor tempInstructor = new Instructor("Tobo", "Snuikr", "kokki@dori");
-			tempInstructor.setInstructorDetail(new InstructorDetail("flexieTube", "makingMoney"));
+			Instructor tempInstructor = new Instructor("Snalla", "Palla", "Hiepa@dori");
+			tempInstructor.setInstructorDetail(new InstructorDetail("Hoiiiia", "Toftif"));
 			
 			session.beginTransaction();
 			
